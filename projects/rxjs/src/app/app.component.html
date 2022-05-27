@@ -1,0 +1,15 @@
+<div class="main-wrapper" fxLayout="column" fxLayoutGap="20px">
+  <h1>APIs</h1>
+  <!-- checkbox to show only finance apis -->
+  <mat-checkbox (change)="filterFinance($event)">
+    Finance
+  </mat-checkbox>
+  <!-- display the list of apis -->
+  <mat-chip-list class="mat-chip-list-stacked">
+    <mat-chip fxLayout *ngFor="let data of data$ | async" color="primary">
+      <a href="{{data.Link}}">{{data.API}}</a>
+      <span fxFlex></span>
+      <span>{{data.Category}}</span>
+    </mat-chip>
+  </mat-chip-list>
+</div>
